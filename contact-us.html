@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="logo1.png" alt="SME Logo" class="logo">
+            <img src="logo2.png" alt="SME Logo" class="logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="coursepage6.html">Courses 6 month</a></li>
+                <li><a href="coursepage6m.html">Courses 6 Week</a></li>
+                <li><a href="pricing_discount.html"> Pricing and Discounts</a></li>
+                <li><a href="requestqoute.html"> Request A qoute </a></li>
+            </ul>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Contact Us</h2>
+        <p>If you have any questions or would like more information, please get in touch with us using the form below.</p>
+
+        <form action="submit_contact.php" method="post">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Phone:</label>
+                <input type="tel" id="phone" name="phone">
+            </div>
+
+            <div class="form-group">
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" required></textarea>
+            </div>
+
+            <div class="form-group">
+                <button type="submit" class="submit-button">Submit</button>
+            </div>
+        </form>
+
+        <div class="contact-details">
+            <p>Phone Number: +272 887 6792</p>
+            <p>Email: <a href="mailto:EmpoweringTheNation@gmail.com">EmpoweringTheNation@gmail.com</a></p>
+        </div>
+    </main>
+
+    <footer>
+        Footer content here
+    </footer>
+</body>
+</html>

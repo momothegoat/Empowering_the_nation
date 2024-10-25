@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Request a Quote</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Navigation Menu -->
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="coursepage6.html">Courses 6 Month</a></li>
+            <li><a href="coursepage6m.html">Courses 6 Week</a></li>
+            <li><a href="pricing_discount.html">Pricing and Discounts</a></li>
+            <li><a href="requestquote.html">Request a Quote</a></li>
+        </ul>
+    </nav>
+
+    <!-- Header Section -->
+    <header>
+        <h1>Request a Quote</h1>
+        <p>Fill in the details below to request a quote. We’ll get back to you as soon as possible!</p>
+    </header>
+
+    <!-- Main Section -->
+    <main>
+        <form id="quoteForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required><br><br>
+
+            <label for="email">Email/Phone:</label>
+            <input type="text" id="email" name="email" required><br><br>
+
+            <label for="message">Additional Details:</label><br>
+            <textarea id="message" name="message" rows="4" cols="50" required></textarea><br><br>
+
+            <!-- Submit Button -->
+            <button type="submit">Request Quote</button>
+        </form>
+
+        <!-- Success Message -->
+        <p id="successMessage" style="display:none; color:green; font-weight:bold; margin-top:20px;">
+            Sent successfully! We'll get back to you as soon as possible.
+        </p>
+    </main>
+
+    <!-- JavaScript to handle form submission -->
+    <script>
+        // Form submission handler
+        document.getElementById('quoteForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevents form from refreshing the page
+
+            // Show the success message
+            document.getElementById('successMessage').style.display = 'block';
+
+            // Optionally, you can reset the form fields after submission
+            document.getElementById('quoteForm').reset();
+        });
+    </script>
+
+</body>
+</html>

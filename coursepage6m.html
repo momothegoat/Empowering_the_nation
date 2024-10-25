@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>6-Week Courses - Empowering the Nation</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Add some styles to improve calculator appearance */
+        .calculator-container {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #f2f2f2;
+            border-radius: 10px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .calculator-container h2 {
+            text-align: center;
+        }
+
+        .calculator-form label {
+            display: block;
+            margin: 10px 0;
+        }
+
+        .calculator-form input[type="checkbox"] {
+            margin-right: 10px;
+        }
+
+        .total-amount {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .calculate-button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            font-size: 1.1rem;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .calculate-button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="images/Logo.png" alt="Logo" class="logo">
+            <img src="images/Logo.png" alt="Logo" class="logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="coursepage6.html">6-Month Courses</a></li>
+                <li><a href="coursepage6m.html">6-Week Courses</a></li>
+                <li><a href="pricing_discount.html">Pricing & Discounts</a></li>
+                <li><a href="requestqoute.html">Request A Quote</a></li>
+                <li><a href="contact-us.html">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>6-Week Courses</h1>
+        <p>Our 6-week program offers intensive, hands-on learning to equip participants with essential skills. Below are the courses available, including the fees and content covered during the course.</p>
+
+        <!-- Courses Table -->
+        <section class="courses-table">
+            <h2>Available Courses</h2>
+            <table>
+                <tr>
+                    <th>Course</th>
+                    <th>Fees</th>
+                    <th>Course Content</th>
+                </tr>
+                <tr>
+                    <td>Child Minding</td>
+                    <td>R750.00</td>
+                    <td>Provides basic child and baby care skills, including safety, feeding, and playtime.</td>
+                </tr>
+                <tr>
+                    <td>Cooking</td>
+                    <td>R750.00</td>
+                    <td>Learn to prepare and cook nutritious family meals, focusing on cost-effective ingredients.</td>
+                </tr>
+                <tr>
+                    <td>Garden Maintenance</td>
+                    <td>R750.00</td>
+                    <td>Gain essential knowledge on watering, pruning, and planting to maintain a domestic garden.</td>
+                </tr>
+            </table>
+        </section>
+
+        <!-- Discount Calculator Section -->
+        <section class="calculator-container">
+            <h2>Calculate Your Total Fees</h2>
+            <form id="course-form" class="calculator-form">
+                <label>
+                    <input type="checkbox" name="course" value="750"> Child Minding (R750)
+                </label>
+                <label>
+                    <input type="checkbox" name="course" value="750"> Cooking (R750)
+                </label>
+                <label>
+                    <input type="checkbox" name="course" value="750"> Garden Maintenance (R750)
+                </label>
+
+                <button type="button" class="calculate-button" onclick="calculateTotal()">Calculate Total</button>
+            </form>
+
+            <div class="total-amount" id="total-fees">
+                Total Fees: R0.00
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h4>Contact Us</h4>
+                <p>Phone: +272 887 6792</p>
+                <p>Email: <a href="mailto:EmpoweringTheNation@gmail.com">EmpoweringTheNation@gmail.com</a></p>
+                <p>Address: 123 Training Lane, Cityville, Country</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Empowering The Nation. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Discount Calculation -->
+    <script>
+        function calculateTotal() {
+            const coursePrices = document.querySelectorAll('input[name="course"]:checked');
+            let total = 0;
+            
+            coursePrices.forEach((course) => {
+                total += parseFloat(course.value);
+            });
+
+            let discount = 0;
+            if (coursePrices.length === 2) {
+                discount = total * 0.05; // 5% discount for 2 courses
+            } else if (coursePrices.length === 3) {
+                discount = total * 0.10; // 10% discount for 3 courses
+            }
+
+            const finalTotal = total - discount;
+            document.getElementById('total-fees').textContent = `Total Fees: R${finalTotal.toFixed(2)}`;
+        }
+    </script>
+
+</body>
+</html>

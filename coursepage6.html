@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>6-Month Courses - Empowering the Nation</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="coursepage6.html">Courses - 6 Month</a></li>
+            <li><a href="coursepage6m.html">Courses - 6 Week</a></li>
+            <li><a href="pricing_discount.html">Pricing & Discounts</a></li>
+            <li><a href="requestqoute.html">Request A Quote</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+    </nav>
+
+    <!-- Header -->
+    <header>
+        <h1>6-Month Courses</h1>
+        <p>Enhance your skills with our comprehensive 6-month courses. These programs are designed to provide you with hands-on experience and knowledge in various fields, preparing you for both personal and professional growth.</p>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Course Table Section -->
+        <section>
+            <h2>Course Offerings</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Course</th>
+                        <th>Fees</th>
+                        <th>Course Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>First Aid</td>
+                        <td>R1500.00</td>
+                        <td>Learn essential first aid techniques, including CPR, wound care, and emergency response procedures for various accidents.</td>
+                    </tr>
+                    <tr>
+                        <td>Sewing</td>
+                        <td>R1500.00</td>
+                        <td>Develop skills in alterations, tailoring, and creating new garments. Learn how to use a sewing machine, read patterns, and more.</td>
+                    </tr>
+                    <tr>
+                        <td>Landscaping</td>
+                        <td>R1500.00</td>
+                        <td>Understand the basics of garden design, plant care, and landscaping. Create and maintain aesthetically pleasing outdoor spaces.</td>
+                    </tr>
+                    <tr>
+                        <td>Life Skills</td>
+                        <td>R1500.00</td>
+                        <td>Gain practical skills such as financial literacy, time management, communication, and conflict resolution to improve your daily life.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Discount Calculator Section -->
+        <section>
+            <h2>Calculate Your Total Fees</h2>
+            <form id="course-form">
+                <label>
+                    <input type="checkbox" name="course" value="1500"> First Aid (R1500)
+                </label><br>
+                <label>
+                    <input type="checkbox" name="course" value="1500"> Sewing (R1500)
+                </label><br>
+                <label>
+                    <input type="checkbox" name="course" value="1500"> Landscaping (R1500)
+                </label><br>
+                <label>
+                    <input type="checkbox" name="course" value="1500"> Life Skills (R1500)
+                </label><br><br>
+
+                <button type="button" onclick="calculateTotal()">Calculate Total</button>
+            </form>
+
+            <p id="total-fees">Total Fees: R0.00</p>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h4>Contact Us</h4>
+                <p>Phone: +272 887 6792</p>
+                <p>Email: <a href="mailto:EmpoweringTheNation@gmail.com">EmpoweringTheNation@gmail.com</a></p>
+                <p>Address: 123 Training Lane, Cityville, Country</p>
+            </div>
+            <div class="footer-section">
+                <h4>Follow Us</h4>
+                <a href="#"><img src="facebook-icon.png" alt="Facebook" class="social-icon"></a>
+                <a href="#"><img src="twitter-icon.png" alt="Twitter" class="social-icon"></a>
+                <a href="#"><img src="instagram-icon.png" alt="Instagram" class="social-icon"></a>
+                <a href="#"><img src="linkedin-icon.png" alt="LinkedIn" class="social-icon"></a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Empowering The Nation. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Discount Calculation -->
+    <script>
+        function calculateTotal() {
+            const coursePrices = document.querySelectorAll('input[name="course"]:checked');
+            let total = 0;
+            
+            coursePrices.forEach((course) => {
+                total += parseFloat(course.value);
+            });
+
+            let discount = 0;
+            if (coursePrices.length === 2) {
+                discount = total * 0.05; // 5% discount for 2 courses
+            } else if (coursePrices.length === 3) {
+                discount = total * 0.10; // 10% discount for 3 courses
+            } else if (coursePrices.length >= 4) {
+                discount = total * 0.15; // 15% discount for 4 or more courses
+            }
+
+            const finalTotal = total - discount;
+            document.getElementById('total-fees').textContent = `Total Fees: R${finalTotal.toFixed(2)}`;
+        }
+    </script>
+
+</body>
+</html>
